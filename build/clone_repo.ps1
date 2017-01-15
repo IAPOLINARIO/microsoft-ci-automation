@@ -1,9 +1,11 @@
-echo "Creating directory to clone project..."
-cd C:/
-mkdir C:/CI
-cd ./CI
+Write-Host "Creating directory to clone project..."
+mkdir $source_code_destination_path
 
-echo "Cloning repo..."
-git clone -q https://github.com/Teletrax/CIAssignment.git 
+Write-Host "Navigating to destionation folder..."
+cd $source_code_destination_path
 
-cd ./CIAssignment
+Write-Host "Cloning repo..."
+#Using -q to escape from annoying git warnings 
+git clone -q $source_code_git_origin $repo_name
+
+cd $repo_name
