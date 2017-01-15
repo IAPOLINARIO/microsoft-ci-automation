@@ -1,5 +1,5 @@
 $backend_process_name = $backend_service_file.Substring(0, $backend_service_file.LastIndexOf('.'))
-$backend_process = Get-Process -Name $backend_process_name
+$backend_process = Get-Process | Where {$_.ProcessName -match $backend_process_name}
 
 
 Write-Host "Checking if another process are running with the same name..."
