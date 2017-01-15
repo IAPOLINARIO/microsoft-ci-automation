@@ -2,8 +2,10 @@ Write-Host "Navigating to root path..."
 cd /
 
 #Be sure that destination folder doesn't contain anything important!
-Write-Host "Cleaning the destination folder..."
-Remove-Item $source_code_destination_path -Recurse -Force
+if(Test-Path $source_code_destination_path){
+    Write-Host "Cleaning the destination folder..."
+    Remove-Item $source_code_destination_path -Recurse -Force
+} 
 
 Write-Host "Creating directory to clone project..."
 mkdir $source_code_destination_path

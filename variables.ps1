@@ -6,7 +6,7 @@ $buildEnvironmentScriptPath = $scriptBasePath + "\environment\build\"
 $executionEnvironmentScriptPath = $scriptBasePath + "\environment\execution\"
 $buildScriptPath = $scriptBasePath + "\build\"
 
-$build_configuration_mode = "release"
+$build_configuration_mode = "Release"
 $repo_name = "CIAssignment"
 $source_code_git_origin = "https://github.com/Teletrax/CIAssignment.git"
 $source_code_destination_path = "C:\4C\"
