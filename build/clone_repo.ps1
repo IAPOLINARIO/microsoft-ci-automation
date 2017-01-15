@@ -8,7 +8,7 @@ Remove-Item $source_code_destination_path -Recurse -Force
 Write-Host "Creating directory to clone project..."
 mkdir $source_code_destination_path
 
-Write-Host "Navigating to destionation folder..."
+Write-Host "Navigating to destination folder..."
 cd $source_code_destination_path
 
 Write-Host "Cloning repo..."

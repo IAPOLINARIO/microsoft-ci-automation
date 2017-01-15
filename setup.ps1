@@ -33,7 +33,7 @@ Invoke-Expression ($buildScriptPath + "restore_packages.ps1")
 Invoke-Expression ($buildScriptPath + "publish.ps1")
 
 #Setup MSDTC
-Invoke-Expression ($executionEnvironmentScriptPath + "setup_mstdc.ps1")
+Invoke-Expression ($executionEnvironmentScriptPath + "setup_msdtc.ps1")
 
 #Setup MSMQ
 Invoke-Expression ($executionEnvironmentScriptPath + "setup_msmq.ps1")
