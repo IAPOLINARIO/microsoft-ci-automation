@@ -8,5 +8,5 @@ if(-not($api_pool)){
     Write-Host "Creating new App Pool for API..."
     New-Item –Path $iis_api_pool_path
 }
-Write-Host "Set the Runtime Version to No Manage Code"
+Write-Host "Setting runtime"
 Set-ItemProperty -Path $iis_api_pool_path -Name managedRuntimeVersion -Value ''

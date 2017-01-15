@@ -71,7 +71,7 @@ Invoke-Expression ($deployScriptPath + "extract_artifacts.ps1")
 Invoke-Expression ($deployScriptPath + "create_database.ps1")
 
 #Setup App Pool
-Invoke-Expression ($deployScriptPath + "setup_app_pool.ps1")
+Invoke-Expression ($deployScriptPath + "setup_iis_pool.ps1")
 
 #Deploy Api
 Invoke-Expression ($deployScriptPath + "deploy_api.ps1")
