@@ -17,3 +17,5 @@ Invoke-Sqlcmd -InputFile ($database_script_path + "dbo.Work.sql") -ServerInstanc
 
 Write-Host "Query Database to be sure everything it's ok"
 Invoke-Sqlcmd -Query "SELECT count(*) FROM WORK"  -ServerInstance (".\" + $sql_instance) -Database "WORKER" 
+
+cd $source_code_destination_path
