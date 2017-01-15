@@ -8,3 +8,11 @@
 #-querytimeout 0
 
 #"ConnectionString": "Data Source=.;Initial Catalog=Worker;Integrated Security=False;Pooling=False",
+
+
+#Get-ChildItem –Path IIS:\AppPools
+
+#Get-ItemProperty IIS:\AppPools\API | select *
+
+
+#Remove-WebAppPool -Name MyAppPool
