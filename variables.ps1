@@ -17,7 +17,7 @@ $deploy_path = $source_code_destination_path + $repo_name + "\Deploy\"
 $api_source_path = $source_code_destination_path + $repo_name + "\src\FourC.Worker.Api\"
 $core_source_path = $source_code_destination_path + $repo_name + "\src\FourC.Worker.Core\"
 $backend_source_path = $source_code_destination_path + $repo_name + "\src\FourC.Worker.Backend\"
-$backend_sercice_file = "FourC.Worker.Backend.exe"
+$backend_service_file = "FourC.Worker.Backend.exe"
 $backend_service_path =  $deploy_path + "backend\" + $backend_sercice_file
 
 $database_script_path = $source_code_destination_path + $repo_name + "\scripts\"
