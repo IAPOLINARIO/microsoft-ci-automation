@@ -1,3 +1,3 @@
-"Installing and configuring MSDTC..."
+Write-Host "Installing and configuring MSDTC..."
 msdtc -install
 #net start msdtc

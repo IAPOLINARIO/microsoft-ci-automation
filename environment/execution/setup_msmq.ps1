@@ -1,2 +1,2 @@
-echo "Configuring MSMQ..."
+Write-Host "Configuring MSMQ..."
 Add-WindowsFeature MSMQ

@@ -31,3 +31,18 @@ Invoke-Expression ($buildScriptPath + "restore_packages.ps1")
 
 #Building and Publishing projects
 Invoke-Expression ($buildScriptPath + "publish.ps1")
+
+#Setup MSDTC
+Invoke-Expression ($executionEnvironmentScriptPath + "setup_mstdc.ps1")
+
+#Setup MSMQ
+Invoke-Expression ($executionEnvironmentScriptPath + "setup_msmq.ps1")
+
+#Setup IIS
+Invoke-Expression ($executionEnvironmentScriptPath + "setup_iis.ps1")
+
+#Setup ASP.NET MODULE for IIS
+Invoke-Expression ($executionEnvironmentScriptPath + "setup_windows_hosting.ps1")
+
+#Setup SQL EXPRESS 2014
+Invoke-Expression ($executionEnvironmentScriptPath + "setup_sql_express.ps1")
