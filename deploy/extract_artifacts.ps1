@@ -7,8 +7,5 @@ if (-not (test-path "$env:ProgramFiles\7-Zip\7z.exe")) {
 Write-Host "Creating alias..."
 set-alias sz "$env:ProgramFiles\7-Zip\7z.exe" 
 
-Write-Host "Decompressing api..."
-sz e ($deploy_path + "api.zip") 
-
-Write-Host "Decompressing backend..."
-sz e ($deploy_path + "backend.zip") 
+Write-Host "Decompressing files..."
+sz -y e ($deploy_path + "*.zip") ("-o" + $deploy_path) 
