@@ -4,3 +4,7 @@
 ##$env:computername
 #-includeallsubfeature
 
+#Invoke-Sqlcmd -Query "SELECT count(*) FROM WORK" -ServerInstance ".\SQLEXPRESS" -Database "WORKER" 
+#-querytimeout 0
+
+#"ConnectionString": "Data Source=.;Initial Catalog=Worker;Integrated Security=False;Pooling=False",
