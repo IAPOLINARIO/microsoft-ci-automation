@@ -30,4 +30,4 @@ Invoke-Expression ($buildScriptPath + "clone_repo.ps1")
 Invoke-Expression ($buildScriptPath + "restore_packages.ps1")
 
 #Building and Publishing projects
-Invoke-Expression ($buildScriptPath + "restore_packages.ps1")
+Invoke-Expression ($buildScriptPath + "publish.ps1")
