@@ -1,5 +1,3 @@
-Write-Host "Creating Database"
-
 Write-Host "Search for SQL Instance..."
 $sql_instance = (get-itemproperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server').InstalledInstances | where{$_ -match "SQLEXPRESS"} | Select -First 1
 
@@ -7,4 +5,11 @@ if(-not($sql_instance)) {
     throw "SQLEXPRESS not found"
 }
 
+Write-Host "Drop database if already exists..."
+Invoke-Sqlcmd -Query "IF EXISTS(select * from sys.databases where name='Worker'); DROP DATABASE Worker;" -ServerInstance (".\" + $sql_instance) -Database "Master"
+
+Write-Host "Recreating Database..."
 Invoke-Sqlcmd -InputFile ($database_script_path + "dbo.Work.sql") -ServerInstance (".\" + $sql_instance)
+
+Write-Host "Query Database to be sure everything it's ok"
+Invoke-Sqlcmd -Query "SELECT count(*) FROM WORK" -ServerInstance -ServerInstance (".\" + $sql_instance) -Database "WORKER" 
