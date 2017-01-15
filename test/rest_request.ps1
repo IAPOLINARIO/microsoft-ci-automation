@@ -6,4 +6,4 @@ $JSON = @'
 }
 '@
 
-$response = Invoke-RestMethod -Uri "http://localhost:5000/v1/worker" -Method Post -Body $JSON -ContentType "application/json"
+$response = Invoke-RestMethod -Uri $api_endpoint -Method Post -Body $JSON -ContentType "application/json"
