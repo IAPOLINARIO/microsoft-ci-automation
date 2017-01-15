@@ -1,8 +1,8 @@
 Write-Host "Restoring FourC.Worker.Core Packages..."
-dotnet restore ($source_code_path_destination + "\src\FourC.Worker.Core\project.json")
+dotnet restore ($core_source_path + "project.json")
 
 Write-Host "Restoring FourC.Worker.Backend Packages..."
-dotnet restore ($source_code_path_destination + "\src\FourC.Worker.Backend\project.json")
+dotnet restore ($backend_source_path + "project.json")
 
 Write-Host "Restoring FourC.Worker.Api Packages..."
-dotnet restore ($source_code_path_destination + "\src\FourC.Worker.Api\project.json")
+dotnet restore ($api_source_path + "project.json")
