@@ -21,7 +21,7 @@ $backend_source_path = $source_code_destination_path + $repo_name + "\src\FourC.
 $database_script_path = $source_code_destination_path + $repo_name + "\scripts\"
 
 $api_port = 80
-$api_endpoint = "http://localhost/"
+$api_endpoint = "http://localhost/v1/worker/"
 
 $app_pool_managedRuntimeVersion = ""
 
