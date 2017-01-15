@@ -7,4 +7,4 @@ if(-not($sql_instance)) {
     throw "SQLEXPRESS not found"
 }
 
-Invoke-Sqlcmd -InputFile ($database_script_path + "dbo.Work.sql") -ServerInstance ()".\" + $sql_instance)
+Invoke-Sqlcmd -InputFile ($database_script_path + "dbo.Work.sql") -ServerInstance (".\" + $sql_instance)
