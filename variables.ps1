@@ -17,13 +17,14 @@ $deploy_path = $source_code_destination_path + $repo_name + "\Deploy\"
 $api_source_path = $source_code_destination_path + $repo_name + "\src\FourC.Worker.Api\"
 $core_source_path = $source_code_destination_path + $repo_name + "\src\FourC.Worker.Core\"
 $backend_source_path = $source_code_destination_path + $repo_name + "\src\FourC.Worker.Backend\"
+$backend_sercice_file = "FourC.Worker.Backend.exe"
+$backend_service_path =  $deploy_path + "backend\" + $backend_sercice_file
 
 $database_script_path = $source_code_destination_path + $repo_name + "\scripts\"
 
+$api_site_name = "API"
 $api_port = 80
 $api_endpoint = "http://localhost:" + $api_port + "/v1/worker/"
-$api_site_name = "API"
 
-$app_pool_managedRuntimeVersion = ''
 $base_iis_app_pool_path = "IIS:\AppPools\"
 $iis_api_pool_path = $base_iis_app_pool_path + $api_site_name
