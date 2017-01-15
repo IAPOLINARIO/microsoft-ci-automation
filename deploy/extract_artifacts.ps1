@@ -8,4 +8,4 @@ Write-Host "Creating alias..."
 set-alias sz "$env:ProgramFiles\7-Zip\7z.exe" 
 
 Write-Host "Decompressing files..."
-sz -y e ($deploy_path + "*.zip") ("-o" + $deploy_path) 
+sz -y x ($deploy_path + "*.zip") ("-o" + $deploy_path) 
