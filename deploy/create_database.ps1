@@ -14,8 +14,3 @@ Invoke-Sqlcmd -Query "IF EXISTS(select * from sys.databases where name='Worker')
 
 Write-Host "Recreating Database..."
 Invoke-Sqlcmd -InputFile ($database_script_path + "dbo.Work.sql") -ServerInstance (".\" + $sql_instance)
-
-Write-Host "Query Database to be sure everything it's ok"
-Invoke-Sqlcmd -Query "SELECT count(*) FROM WORK"  -ServerInstance (".\" + $sql_instance) -Database "WORKER" 
-
-cd $source_code_destination_path
