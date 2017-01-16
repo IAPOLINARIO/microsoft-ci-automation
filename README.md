@@ -6,7 +6,7 @@
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Environment](#tools)
-- [Next Steps](#next steps)
+- [Next Steps](#next-steps)
 - [References](#references)
 
 # Introduction
@@ -14,10 +14,8 @@
 This project consists of a set of Powershell scripts to automate a Windows environment with all the tools and services 
 required to build, deploy and run .NET applications.
 
-One of the scripts makes the clone of an example application, installs all the required dependencies, builds and 
-deploy locally by connecting to a SQL Express database.
-
-If you want to reduce your work in setting up a Windows environment, you have come to the right place.
+One of the scripts makes the clone of an example application (You can find the application link in the references section), 
+installs all the required dependencies, builds and deploy locally by connecting to a SQL Express database.
 
 Part of the dependencies are installed using Chocolatey. Chocolatey is a tool for Software Management Automation, focused on Windows platform. 
 It was created a few years ago, but it already has great acceptance on the part of the community. 
@@ -25,10 +23,9 @@ With it you can install packages with just a few commands, without worrying abou
 the environment.
 The best thing, is that everyone can contribute with new scripts and improve existing ones. 
 
-For more details about Chocolatey, see the reference section at the bottom of the page.
+If you want to reduce your work in setting up a Windows environment, you have come to the right place!
 
-
-Download this project and see how simple your life can be after automating your tasks with Powershell scripts.
+__NOTE__: For more details about Chocolatey, see the reference section at the bottom of the page.
 
 # Contributing
 
@@ -36,11 +33,15 @@ If you find this project useful here's how you can help:
 
 - Send a Pull Request with your awesome new features and bug fixes
 - Help new users with they may encounter
-- Support the development of this project sharing in your social media or buying me a coffe/beer. :)
+- Support the development of this project sharing in your social media or buying me a coffee/beer. :)
 
 # Issues
 
-The scripts contained in this project is on version 1.0 and have been tested with Windows Server 2016. 
+This project was created in just over 15 hours and therefore, bugs may exist. 
+Be patient if you encounter any problems and help me improve the scripts so that others can benefit as well.
+
+The scripts contained in this project have been tested with Windows Server 2016.
+ 
 If you are using a different version of Windows and find a problem with one of the scripts, 
 feel free to submit a pull request, open an issue here on Github or even send me an email.
 
