@@ -1,6 +1,5 @@
-git 
+git -params '"/GitOnlyOnPath"'
 7zip
 dotnetcore-sdk -version 1.0.3
 dotnet4.6.1-devpack
 mssqlserver2014express
-dotnetcore-windowshosting

@@ -13,17 +13,20 @@ $basePath = Split-Path $MyInvocation.MyCommand.Path
 #Setup Package Manager for WINDOWS
 Invoke-Expression ($buildEnvironmentScriptPath + "setup_chocolatey.ps1")
 
+#Install all the Chocolatey Dependencies
+Invoke-Expression ($environmentScriptPath + "install_choco_dependencies.ps1")
+
 #Setup Git
-Invoke-Expression ($buildEnvironmentScriptPath + "setup_git.ps1")
+#Invoke-Expression ($buildEnvironmentScriptPath + "setup_git.ps1")
 
 #Setup .NET Core 
-Invoke-Expression ($buildEnvironmentScriptPath + "setup_dotnetcore_sdk.ps1")
+#Invoke-Expression ($buildEnvironmentScriptPath + "setup_dotnetcore_sdk.ps1")
 
 #Setup .NET 4.6.1-devpack
-Invoke-Expression ($buildEnvironmentScriptPath + "setup_dotnet_devpack.ps1")
+#Invoke-Expression ($buildEnvironmentScriptPath + "setup_dotnet_devpack.ps1")
 
 #Setup the compression tool
-Invoke-Expression ($buildEnvironmentScriptPath + "setup_compress_tool.ps1")
+#Invoke-Expression ($buildEnvironmentScriptPath + "setup_compress_tool.ps1")
 
 #Refreshing environment 
 Invoke-Expression ($buildEnvironmentScriptPath + "refresh_environment.ps1")
@@ -60,7 +63,7 @@ Invoke-Expression ($executionEnvironmentScriptPath + "setup_iis.ps1")
 Invoke-Expression ($executionEnvironmentScriptPath + "setup_windows_hosting.ps1")
 
 #Setup SQL EXPRESS 2014
-Invoke-Expression ($executionEnvironmentScriptPath + "setup_sql_express.ps1")
+#Invoke-Expression ($executionEnvironmentScriptPath + "setup_sql_express.ps1")
 
 #Setup SQL PS
 Invoke-Expression ($executionEnvironmentScriptPath + "setup_sqlps.ps1")

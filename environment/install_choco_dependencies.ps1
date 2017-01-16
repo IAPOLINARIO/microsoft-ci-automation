@@ -1,4 +1,6 @@
-#https://technet.microsoft.com/en-us/library/ee692806.aspx
+$scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
+$dependencies = Get-Content  ($scriptPath + "\dependencies.txt")
 
-$dependencies = Get-Content .\choco_dependencies.txt
-
+foreach($dep in $dependencies) {
+    choco install -y $dep
+}
