@@ -16,9 +16,6 @@ Invoke-Expression ($buildEnvironmentScriptPath + "setup_chocolatey.ps1")
 #Setup Git
 Invoke-Expression ($buildEnvironmentScriptPath + "setup_git.ps1")
 
-#Refreshing environment 
-Invoke-Expression ($buildEnvironmentScriptPath + "refresh_environment.ps1")
-
 #Setup .NET Core 
 Invoke-Expression ($buildEnvironmentScriptPath + "setup_dotnetcore_sdk.ps1")
 
@@ -27,7 +24,11 @@ Invoke-Expression ($buildEnvironmentScriptPath + "setup_dotnet_devpack.ps1")
 
 #Setup the compression tool
 Invoke-Expression ($buildEnvironmentScriptPath + "setup_compress_tool.ps1")
+
+#Refreshing environment 
+Invoke-Expression ($buildEnvironmentScriptPath + "refresh_environment.ps1")
 #endregion
+
 
 #region Build
 #Cloning project repository
