@@ -97,7 +97,7 @@ Below you can see the tools, services, and frameworks that are installed at the 
 | IIS           | 8.5           |
 | SQL EXPRESS   | 2014          |
 | Asp.Net Core  | 4.5           |
-| SQLPS         | 4.5           |
+| SQLPS         |               |
 
 
 
