@@ -27,8 +27,10 @@ Invoke-Expression ($buildEnvironmentScriptPath + "setup_compress_tool.ps1")
 
 #Refreshing environment 
 Invoke-Expression ($buildEnvironmentScriptPath + "refresh_environment.ps1")
-#endregion
 
+#Stop old process
+Invoke-Expression ($buildEnvironmentScriptPath + "clean_environment.ps1")
+#endregion
 
 #region Build
 #Cloning project repository
