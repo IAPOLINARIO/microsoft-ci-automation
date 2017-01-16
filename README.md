@@ -41,7 +41,7 @@ This project was created in just over 15 hours and therefore, bugs may exist.
 Be patient if you encounter any problems and help me improve the scripts so that others can benefit as well.
 
 The scripts contained in this project have been tested with Windows Server 2016.
- 
+
 If you are using a different version of Windows and find a problem with one of the scripts, 
 feel free to submit a pull request, open an issue here on Github or even send me an email.
 
@@ -51,7 +51,6 @@ feel free to submit a pull request, open an issue here on Github or even send me
 - 4 GB RAM or higher
 - Internet Connection
 - Powershell v3+ (with administrative permissions)
-
 
 # Installation
 
@@ -93,8 +92,8 @@ Below you can see the tools, services, and frameworks that are installed at the 
 | .NET Core SDK | 1.0.3         |
 | .NET Dev Pack | 4.6.1         |
 | 7zip          | 16.0.2        |
-| MSDTC         | 3.0           |
-| MSMQ          | 3.0           |
+| MSDTC         |               |
+| MSMQ          |               |
 | IIS           | 8.5           |
 | SQL EXPRESS   | 2014          |
 | Asp.Net Core  | 4.5           |
