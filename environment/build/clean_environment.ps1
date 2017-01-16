@@ -8,9 +8,3 @@ Write-Host "Checking if another process are running with the same name..."
 if($backend_process){
     Stop-Process -Name $backend_process_name
 }
-
-#Be sure that destination folder doesn't contain anything important!
-if(Test-Path $source_code_destination_path){
-    Write-Host "Cleaning the destination folder..."
-    Remove-Item $source_code_destination_path -Recurse -Force
-} 
