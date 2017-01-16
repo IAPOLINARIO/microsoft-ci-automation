@@ -2,7 +2,7 @@
 
 $scriptBasePath = Split-Path $MyInvocation.MyCommand.Path
 
-$environmentScriptPath = "\environment\"
+$environmentScriptPath = $scriptBasePath + "\environment\"
 $buildEnvironmentScriptPath = $scriptBasePath + $environmentScriptPath +"build\"
 $executionEnvironmentScriptPath = $scriptBasePath + $environmentScriptPath + "execution\"
 $buildScriptPath = $scriptBasePath + "\build\"
