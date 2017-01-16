@@ -7,4 +7,5 @@ $api_pool = Get-ChildItem -Path $base_iis_app_pool_path | Where { $_.Name -match
 if(!($api_pool)){
     New-Item -Path $iis_api_pool_path
 }
+
 Set-ItemProperty -Path $iis_api_pool_path -Name managedRuntimeVersion -Value ''
