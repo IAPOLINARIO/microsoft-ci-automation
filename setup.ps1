@@ -64,6 +64,9 @@ Invoke-Expression ($executionEnvironmentScriptPath + "setup_sql_express.ps1")
 
 #Setup SQL PS
 Invoke-Expression ($executionEnvironmentScriptPath + "setup_sqlps.ps1")
+
+#Refreshing environment 
+Invoke-Expression ($buildEnvironmentScriptPath + "refresh_environment.ps1")
 #endregion
 
 #region Deploy
