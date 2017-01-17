@@ -83,6 +83,9 @@ Invoke-Expression ($deployScriptPath + "setup_iis_pool.ps1")
 #Deploy Api
 Invoke-Expression ($deployScriptPath + "deploy_api.ps1")
 
+#Configure AppSettings
+Invoke-Expression ($deployScriptPath + "setup_appsettings.ps1")
+
 #Deploy Background Service
 Invoke-Expression ($deployScriptPath + "deploy_background_service.ps1")
 

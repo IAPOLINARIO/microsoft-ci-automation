@@ -19,7 +19,7 @@ foreach($dep in $dependencies) {
     $process.StartInfo.RedirectStandardOutput = $true
     $process.StartInfo.RedirectStandardError = $true
     $process.StartInfo.UseShellExecute = $false
-    $process.StartInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Hidden
+    $process.StartInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Minimized
     #$process.StartInfo = $pinfo
     $process.Start() | Out-Null
     #$process.BeginOutputReadLine()
@@ -29,12 +29,12 @@ foreach($dep in $dependencies) {
     $stderr = $process.StandardError.ReadToEnd()
 
     if($stdout) {
-        Write-Host "stdout: $stdout"
+        Write-Host ("stdout: $stdout") -ForegroundColor Yellow
     }
 
     if($stderr){
-        Write-Host "stderr: $stderr"
+        Write-Host ("stderr: $stderr") -ForegroundColor Red
     }
-    
+
     $process.Dispose()
 }
