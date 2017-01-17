@@ -1,6 +1,14 @@
-#THIS SCRIPT RUNS SOME OTHER SCRIPTS 
-#TO AUTOMATE ALL OF THE NECESSARY TOOLS IN A WINDOWS SERVER ENVIRONMENT
-#FROM A FRESH INSTALL TO PRODUCTION ENVIROMENT USING .NET CORE/4.5
+<# 
+.SYNOPSIS 
+    Main script to setup the Windows Server 2016 environment
+.DESCRIPTION 
+    This script calls various other scripts that will install and configure tools and frameworks 
+    to provide a Dev/QA/Production environment without the need to perform any manual processes
+.NOTES 
+    Author     : Ismael Apolinário - ismaelapolinario@hotmail.com 
+.LINK 
+    https://github.com/IAPOLINARIO/microsoft-ci-automation
+#> 
 
 #Find path where this script are saved
 $basePath = Split-Path $MyInvocation.MyCommand.Path
