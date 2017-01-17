@@ -10,22 +10,23 @@ $pinfo.RedirectStandardOutput = $true
 $pinfo.UseShellExecute = $false
 
 foreach($dep in $dependencies) {
-    Write-Host "Installing $dep " + ".This can take a while. Be patient..." -ForegroundColor Green 
+    Write-Host "Installing " + $dep + ".This can take a while. Be patient..." -ForegroundColor Green 
     $pinfo.Arguments = "install -y $dep"
     $p = New-Object System.Diagnostics.Process
     $p.StartInfo = $pinfo
     $p.Start() | Out-Null
+    $process.BeginOutputReadLine()
     $p.WaitForExit()
-    $stdout = $p.StandardOutput.ReadToEnd()
-    $stderr = $p.StandardError.ReadToEnd()
+    #$stdout = $p.StandardOutput.ReadToEnd()
+    #$stderr = $p.StandardError.ReadToEnd()
 
-    if($stdout) {
-        Write-Host "stdout: $stdout"
-    }
+    #if($stdout) {
+    #    Write-Host "stdout: $stdout"
+    #}
 
-    if($stderr){
-        Write-Host "stderr: $stderr"
-    }
-    
+    #if($stderr){
+    #    Write-Host "stderr: $stderr"
+    #}
     Write-Host ("exit code: " + $p.ExitCode)
+    $p.Dispose()
 }
