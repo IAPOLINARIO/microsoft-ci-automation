@@ -1,40 +1,29 @@
-# Create more robust Process as compared to Start-Process -Wait (which doesn't
-# wait for the process to finish in PowerShell v3)
+<# 
+.SYNOPSIS 
+   Install dependencies using Chocolatey
+.DESCRIPTION 
+    Chocolatey is a package manager for Windows (like apt-get or yum but for Windows). It was designed to be a 
+    decentralized framework for quickly installing applications and tools. It is built on the NuGet 
+    infrastructure currently using PowerShell as its focus for delivering packages.
+.NOTES 
+    File Name  : install_choco_dependencies.ps1
+    Author     : Ismael Apolinário - ismaelapolinario@hotmail.com 
+    Requires   : PowerShell V3  
+.LINK 
+   https://chocolatey.org/packages/
+#>
 
-$scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
-$dependencies = Get-Content  ($scriptPath + "\choco_dependencies.txt")
-$chocoPath = Join-Path $env:ChocolateyInstall "choco.exe"
+Write-Host "Installing Git..."
+choco install git -params '"/GitOnlyOnPath"'
 
-foreach($dep in $dependencies) {
-    Write-Host ("Installing " + $dep + ".This can take a while. Be patient...") -ForegroundColor Green 
-    #$pinfo = New-Object System.Diagnostics.ProcessStartInfo
-    #$pinfo.FileName = "choco"
-    #$pinfo.RedirectStandardError = $true
-    #$pinfo.RedirectStandardOutput = $true
-    #$pinfo.UseShellExecute = $false
-    #$pinfo.Arguments = "install -y $dep"
-    $params = ("install -y " + $dep)
-    $process = New-Object System.Diagnostics.Process
-    $process.StartInfo = New-Object System.Diagnostics.ProcessStartInfo($chocoPath, $params)
-    $process.StartInfo.RedirectStandardOutput = $true
-    $process.StartInfo.RedirectStandardError = $true
-    $process.StartInfo.UseShellExecute = $false
-    $process.StartInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Minimized
-    #$process.StartInfo = $pinfo
-    $process.Start() | Out-Null
-    #$process.BeginOutputReadLine()
-    #$process.BeginErrorReadLine()
-    $process.WaitForExit()
-    $stdout = $process.StandardOutput.ReadToEnd()
-    $stderr = $process.StandardError.ReadToEnd()
+Write-Host "Installing 7Zip..."
+choco install 7zip
 
-    if($stdout) {
-        Write-Host ("stdout: $stdout") -ForegroundColor Yellow
-    }
+Write-Host "Installing .NET Core SDK..."
+choco install dotnetcore-sdk -version 1.0.3
 
-    if($stderr){
-        Write-Host ("stderr: $stderr") -ForegroundColor Red
-    }
+Write-Host "Installing .NET 4.1 Dev Pack..."
+choco install dotnet4.6.1-devpack
 
-    $process.Dispose()
-}
+Write-Host "Installing SQL Express 2014..."
+choco install mssqlserver2014express
