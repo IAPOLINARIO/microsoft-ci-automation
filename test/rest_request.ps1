@@ -19,5 +19,6 @@ $JSON = @'
 }
 '@
 
+
+Write-Host "Making request to REST API..." -ForegroundColor Yellow
 $response = Invoke-RestMethod -Uri $api_endpoint -Method Post -Body $JSON -ContentType "application/json"
-Write-Host $response
