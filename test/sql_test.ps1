@@ -11,3 +11,21 @@
 .LINK 
     https://github.com/IAPOLINARIO/microsoft-ci-automation
 #> 
+
+#Searches for installed SQL Server instances.
+Write-Host "Search for SQL Instance..."
+$sql_instance = (get-itemproperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server').InstalledInstances | where{$_ -match "SQLEXPRESS"} | Select -First 1
+
+#If no instance is found, an error is thrown.
+if(-not($sql_instance)) {
+    throw "SQLEXPRESS not found"
+}
+
+$query = Invoke-Sqlcmd -Query "SELECT count(*) FROM Work" -ServerInstance (".\" + $sql_instance) -Database "Worker" 
+
+if($query.Column1 -gt 0) {
+    Write-Host ("Your environment it's fully up & running. Congratulations !!!") -ForegroundColor Green
+}
+else {
+    Write-Host ("No data found. Check the connection and try again.") -ForegroundColor Red
+}
