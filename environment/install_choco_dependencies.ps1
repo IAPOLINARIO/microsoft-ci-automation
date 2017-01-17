@@ -22,18 +22,19 @@ foreach($dep in $dependencies) {
     $process.StartInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Hidden
     #$process.StartInfo = $pinfo
     $process.Start() | Out-Null
-    $process.BeginOutputReadLine()
-    $process.BeginErrorReadLine()
+    #$process.BeginOutputReadLine()
+    #$process.BeginErrorReadLine()
     $process.WaitForExit()
-    #$stdout = $process.StandardOutput.ReadToEnd()
-    #$stderr = $process.StandardError.ReadToEnd()
+    $stdout = $process.StandardOutput.ReadToEnd()
+    $stderr = $process.StandardError.ReadToEnd()
 
-    #if($stdout) {
-    #    Write-Host "stdout: $stdout"
-    #}
+    if($stdout) {
+        Write-Host "stdout: $stdout"
+    }
 
-    #if($stderr){
-    #    Write-Host "stderr: $stderr"
-    #}
+    if($stderr){
+        Write-Host "stderr: $stderr"
+    }
+    
     $process.Dispose()
 }
