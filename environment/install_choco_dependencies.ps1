@@ -13,17 +13,5 @@
    https://chocolatey.org/packages/
 #>
 
-Write-Host "Installing Git..."
-choco install -y git -params '"/GitOnlyOnPath"'
-
-Write-Host "Installing 7Zip..."
-choco install -y 7zip
-
-Write-Host "Installing .NET Core SDK..."
-choco install -y dotnetcore-sdk -version 1.0.3
-
-Write-Host "Installing .NET 4.1 Dev Pack..."
-choco install -y dotnet4.6.1-devpack
-
-Write-Host "Installing SQL Express 2014..."
-choco install -y mssqlserver2014express
+Write-Host "Installing Git, 7Zip, .NET Core SDK, .NET 4.1 Dev Pack, SQL Express 2014"
+choco install --force -y git -params '"/GitOnlyOnPath"' 7zip dotnetcore-sdk -version 1.0.3 dotnet4.6.1-devpack mssqlserver2014express
