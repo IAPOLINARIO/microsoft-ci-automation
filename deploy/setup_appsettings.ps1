@@ -17,7 +17,7 @@
 Write-Host "Search for SQL Instance..."
 $sql_instance = (get-itemproperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server').InstalledInstances | where{$_ -match "SQLEXPRESS"} | Select -First 1
 
-$settingsPath = $backend_source_path + "appsettings.json"
+$settingsPath = $deploy_path + "backend\appsettings.json"
 $textReplace = "Data Source=."
 
 if($sql_instance) {
