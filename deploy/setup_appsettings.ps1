@@ -21,6 +21,6 @@ $settingsPath = $deploy_path + "backend\appsettings.json"
 $textReplace = "Data Source=."
 
 if($sql_instance) {
-    $newText = "Data Source=.\" + $sql_instance
+    $newText = "Data Source=.\\" + $sql_instance
     (Get-Content  $settingsPath).replace($textReplace, $newText) | Set-Content $settingsPath
 }
