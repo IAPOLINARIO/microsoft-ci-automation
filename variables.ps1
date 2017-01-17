@@ -40,6 +40,8 @@ $database_script_path = $source_code_destination_path + $repo_name + "\scripts\"
 
 $api_site_name = "API"
 $api_port = 80
+$api_service_file = "FourC.Worker.Api.exe"
+$api_service_path =  $deploy_path + "api\" + $api_service_file
 $api_endpoint = "http://localhost:" + $api_port + "/v1/worker/"
 
 $base_iis_app_pool_path = "IIS:\AppPools\"

@@ -23,9 +23,6 @@ $basePath = Split-Path $MyInvocation.MyCommand.Path
 #Setup Package Manager for WINDOWS
 Invoke-Expression ($buildEnvironmentScriptPath + "setup_chocolatey.ps1")
 
-#Refreshing environment 
-Invoke-Expression ($buildEnvironmentScriptPath + "refresh_environment.ps1")
-
 #Install all the Chocolatey Dependencies
 Invoke-Expression ($environmentScriptPath + "install_choco_dependencies.ps1")
 
