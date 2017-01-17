@@ -21,7 +21,7 @@ if(-not($sql_instance)) {
     throw "SQLEXPRESS not found"
 }
 
-$query = Invoke-Sqlcmd -Query "SELECT * FROM Work" -ServerInstance (".\" + $sql_instance) -Database "Worker" 
+$query = Invoke-Sqlcmd -Query "SELECT COUNT(*) Count FROM Work" -ServerInstance (".\" + $sql_instance) -Database "Worker" 
 
 if($query.Count -gt 0) {
     Write-Host ("Your environment it's fully up & running. Congratulations !!!") -ForegroundColor Green
