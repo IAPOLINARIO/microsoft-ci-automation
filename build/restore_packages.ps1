@@ -1,9 +1,10 @@
 <# 
 .SYNOPSIS 
-    Script that builds and publishes cloned .NET projects.
+    Restores dependencies of a .NET project
 .DESCRIPTION 
-    This script builds and publishes the cloned projects in the initial steps. 
-    The publication is done in the output directory configured in the variable file.
+    This script restores the dependencies contained in the cloned projects in the initial steps. 
+    Through the project.json file and the dotnet restore command, the .NET Framework is responsible for downloading 
+    all the packages needed for the project to be build.
 .NOTES 
     File Name  : restore_packages.ps1
     Author     : Ismael Apolinário - ismaelapolinario@hotmail.com 
