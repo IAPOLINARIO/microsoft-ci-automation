@@ -17,6 +17,7 @@ foreach($dep in $dependencies) {
     $process = New-Object System.Diagnostics.Process
     $process.StartInfo = New-Object System.Diagnostics.ProcessStartInfo($chocoPath, $params)
     $process.StartInfo.RedirectStandardOutput = $true
+    $process.StartInfo.RedirectStandardError = $true
     $process.StartInfo.UseShellExecute = $false
     $process.StartInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Hidden
     #$process.StartInfo = $pinfo
