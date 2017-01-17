@@ -20,7 +20,7 @@ $environmentScriptPath = $scriptBasePath + "\environment\"
 $buildEnvironmentScriptPath = $environmentScriptPath +"build\"
 $executionEnvironmentScriptPath = $environmentScriptPath + "execution\"
 $buildScriptPath = $scriptBasePath + "\build\"
-$deployScriptPath = $scriptBasePath + "\deploy\"
+$deployScriptPath = $scriptBasePath + "\Deploy\"
 $testScriptPath = $scriptBasePath + "\test\"
 
 $build_configuration_mode = "Release"
