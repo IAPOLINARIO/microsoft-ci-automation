@@ -19,7 +19,7 @@ foreach($dep in $dependencies) {
     $process.StartInfo.RedirectStandardOutput = $true
     $process.StartInfo.UseShellExecute = $false
     $process.StartInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Hidden
-    $process.StartInfo = $pinfo
+    #$process.StartInfo = $pinfo
     $process.Start() | Out-Null
     $process.BeginOutputReadLine()
     $process.BeginErrorReadLine()
