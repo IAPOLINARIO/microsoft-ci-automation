@@ -1,6 +1,6 @@
 <# 
 .SYNOPSIS 
-    UConfigures IIS application pool
+    Configures IIS application pool
 .DESCRIPTION 
     This script sets up a new application pool for .NET Core applications. 
     If the application pool already exists, only its runtime changes.

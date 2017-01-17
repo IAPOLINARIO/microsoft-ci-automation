@@ -3,30 +3,36 @@
 
 $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 $dependencies = Get-Content  ($scriptPath + "\choco_dependencies.txt")
-$pinfo = New-Object System.Diagnostics.ProcessStartInfo
-$pinfo.FileName = "choco"
-$pinfo.RedirectStandardError = $true
-$pinfo.RedirectStandardOutput = $true
-$pinfo.UseShellExecute = $false
+$chocoPath = Join-Path $env:ChocolateyInstall "choco.exe"
 
 foreach($dep in $dependencies) {
     Write-Host ("Installing " + $dep + ".This can take a while. Be patient...") -ForegroundColor Green 
-    $pinfo.Arguments = "install -y $dep"
-    $p = New-Object System.Diagnostics.Process
-    $p.StartInfo = $pinfo
-    $p.Start() | Out-Null
-    #$p.BeginOutputReadLine()
-    #$p.BeginErrorReadLine()
-    $p.WaitForExit()
-    $stdout = $p.StandardOutput.ReadToEnd()
-    $stderr = $p.StandardError.ReadToEnd()
+    #$pinfo = New-Object System.Diagnostics.ProcessStartInfo
+    #$pinfo.FileName = "choco"
+    #$pinfo.RedirectStandardError = $true
+    #$pinfo.RedirectStandardOutput = $true
+    #$pinfo.UseShellExecute = $false
+    #$pinfo.Arguments = "install -y $dep"
+    $params = ("install -y " + $dep)
+    $process = New-Object System.Diagnostics.Process
+    $process.StartInfo = New-Object System.Diagnostics.ProcessStartInfo($chocoPath, $params)
+    $process.StartInfo.RedirectStandardOutput = $true
+    $process.StartInfo.UseShellExecute = $false
+    $process.StartInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Hidden
+    $process.StartInfo = $pinfo
+    $process.Start() | Out-Null
+    $process.BeginOutputReadLine()
+    $process.BeginErrorReadLine()
+    $process.WaitForExit()
+    #$stdout = $process.StandardOutput.ReadToEnd()
+    #$stderr = $process.StandardError.ReadToEnd()
 
-    if($stdout) {
-        Write-Host "stdout: $stdout"
-    }
+    #if($stdout) {
+    #    Write-Host "stdout: $stdout"
+    #}
 
-    if($stderr){
-        Write-Host "stderr: $stderr"
-    }
-    $p.Dispose()
+    #if($stderr){
+    #    Write-Host "stderr: $stderr"
+    #}
+    $process.Dispose()
 }

@@ -1,11 +1,11 @@
 <# 
 .SYNOPSIS 
-    UConfigures IIS application pool
+   Cleans directories, stop processes and services.
 .DESCRIPTION 
-    This script sets up a new application pool for .NET Core applications. 
-    If the application pool already exists, only its runtime changes.
+    Performs the process of cleaning files, processes, and services that may prevent the 
+    execution of one of the project scripts.
 .NOTES 
-    File Name  : setup_iis_pool.ps1
+    File Name  : clean_environment.ps1
     Author     : Ismael Apolinário - ismaelapolinario@hotmail.com 
     Requires   : PowerShell V3  
 .LINK 
