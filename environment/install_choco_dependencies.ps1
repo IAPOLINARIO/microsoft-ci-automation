@@ -14,16 +14,16 @@
 #>
 
 Write-Host "Installing Git..."
-choco install git -params '"/GitOnlyOnPath"'
+choco install -y git -params '"/GitOnlyOnPath"'
 
 Write-Host "Installing 7Zip..."
-choco install 7zip
+choco install -y 7zip
 
 Write-Host "Installing .NET Core SDK..."
-choco install dotnetcore-sdk -version 1.0.3
+choco install -y dotnetcore-sdk -version 1.0.3
 
 Write-Host "Installing .NET 4.1 Dev Pack..."
-choco install dotnet4.6.1-devpack
+choco install -y dotnet4.6.1-devpack
 
 Write-Host "Installing SQL Express 2014..."
-choco install mssqlserver2014express
+choco install -y mssqlserver2014express
