@@ -14,4 +14,4 @@
 #>
 
 Write-Host "Installing Git, 7Zip, .NET Core SDK, .NET 4.1 Dev Pack, SQL Express 2014"
-choco install --force -y git -params '"/GitOnlyOnPath"' 7zip dotnetcore-sdk -version 1.0.3 dotnet4.6.1-devpack mssqlserver2014express
+choco install -y git -params '"/GitOnlyOnPath"' 7zip dotnetcore-sdk -version 1.0.3 dotnet4.6.1-devpack mssqlserver2014express
