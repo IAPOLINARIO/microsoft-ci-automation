@@ -92,5 +92,7 @@ Invoke-Expression ($deployScriptPath + "deploy_background_service.ps1")
 #endregion
 
 #Test
+#Test API
+Invoke-Expression ($testScriptPath + "rest_request.ps1")
 
 #endregion

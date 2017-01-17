@@ -21,6 +21,7 @@ $buildEnvironmentScriptPath = $environmentScriptPath +"build\"
 $executionEnvironmentScriptPath = $environmentScriptPath + "execution\"
 $buildScriptPath = $scriptBasePath + "\build\"
 $deployScriptPath = $scriptBasePath + "\deploy\"
+$testScriptPath = $scriptBasePath + "\test\"
 
 $build_configuration_mode = "Release"
 $repo_name = "CIAssignment"

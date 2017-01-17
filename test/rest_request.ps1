@@ -1,8 +1,8 @@
 $JSON = @'
 {
-    "user":"Test",
-    "content":"Test",
-    "timestamp":"2016-12-16T02:00:00Z"
+    "user":"iapolinario",
+    "content":"iapolinario",
+    "timestamp":"2017-01-16T02:00:00Z"
 }
 '@
 
