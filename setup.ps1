@@ -5,7 +5,9 @@
     This script calls various other scripts that will install and configure tools and frameworks 
     to provide a Dev/QA/Production environment without the need to perform any manual processes
 .NOTES 
+    File Name  : setup.ps1
     Author     : Ismael Apolinário - ismaelapolinario@hotmail.com 
+    Requires   : PowerShell V3  
 .LINK 
     https://github.com/IAPOLINARIO/microsoft-ci-automation
 #> 

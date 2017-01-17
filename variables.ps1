@@ -1,4 +1,18 @@
-#Environment Variables
+<# 
+.SYNOPSIS 
+    File with all environment variables
+.DESCRIPTION 
+    Here are all the environment variables used in the execution of the project scripts. 
+    You can adjust the values according to your need and all the scripts will continue to work perfectly.
+.NOTES 
+    File Name  : variables.ps1
+    Author     : Ismael Apolinário - ismaelapolinario@hotmail.com 
+    Requires   : PowerShell V3  
+
+.LINK 
+    https://github.com/IAPOLINARIO/microsoft-ci-automation
+#> 
+
 
 $scriptBasePath = Split-Path $MyInvocation.MyCommand.Path
 

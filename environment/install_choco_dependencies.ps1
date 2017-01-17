@@ -10,7 +10,7 @@ $pinfo.RedirectStandardOutput = $true
 $pinfo.UseShellExecute = $false
 
 foreach($dep in $dependencies) {
-    Write-Host "Installing $dep " + ". This can take a while. Be patient..." -ForegroundColor Green 
+    Write-Host "Installing $dep " + ".This can take a while. Be patient..." -ForegroundColor Green 
     $pinfo.Arguments = "install -y $dep"
     $p = New-Object System.Diagnostics.Process
     $p.StartInfo = $pinfo
