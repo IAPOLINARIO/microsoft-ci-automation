@@ -15,7 +15,7 @@ foreach($dep in $dependencies) {
     $p = New-Object System.Diagnostics.Process
     $p.StartInfo = $pinfo
     $p.Start() | Out-Null
-    $process.BeginOutputReadLine()
+    $p.BeginOutputReadLine()
     $p.WaitForExit()
     #$stdout = $p.StandardOutput.ReadToEnd()
     #$stderr = $p.StandardError.ReadToEnd()
